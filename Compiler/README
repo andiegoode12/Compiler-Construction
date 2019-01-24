@@ -1,0 +1,19 @@
+To run this compiler 
+navigate to the folder
+run the following commands in your command line:
+    make
+    ./a.out < <slic file>
+This will then output a gstal file called gstalFile.gstal
+You can then run this file
+
+Not implemented:
+    - Modulus operater
+    - User is allowed to change counting loop expression in the loop body;
+
+Potential Errors
+ - Calculating booleans return a 0 (false) or >0(true). Some boolean expressions will evaluate to very small positive floats for a true value.
+    If this expression is to be assigned to a variable of integer type then when the boolean value is converted from a float to an int,
+    it looses its true value and becomes false. 
+    
+ 
+ 

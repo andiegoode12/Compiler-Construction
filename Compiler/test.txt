@@ -1,0 +1,24 @@
+#=================================================================
+# File--------peevedpigeons.slic
+# Programmer--Bryan Crawley
+# Project-----Peeved Pigeons
+#
+# Play the "Peeved Pigeons" game. This program originated as an
+# assignment in "Introduction to Programming". A pigeon uses a
+# slingshot to shoot a stone at an annoying pig.
+#=================================================================
+
+main;
+   data:
+      real: thing;
+      integer: n;
+      integer: i;
+
+   algorithm:
+     i := 22;
+	n:=0;
+	print "before ",i, !;
+	counting i downward 4 to 0;
+		print i, !;
+	end counting;	
+end main;

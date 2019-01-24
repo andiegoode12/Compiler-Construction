@@ -1,0 +1,150 @@
+NOP ;ANDREA GOODE
+NOP ;09/06/18
+NOP ;COMPILER CONSTRUCTION
+NOP ;APPROXIMATE SQUARE ROOT CALCULATOR GSTAL
+ISP 4   ; Reserve stack space
+NOP     ; x->ADDR 0
+NOP     ; estimate->ADDR 1
+NOP     ; newEstimate->ADDR 2
+NOP     ; difference->ADDR 3 
+NOP
+NOP     ; START PRINT
+LLI 83  ; S
+PTC
+LLI 101 ; e
+PTC
+LLI 108 ; l
+PTC
+LLI 101 ; e
+PTC
+LLI 99  ; c 
+PTC
+LLI 116 ; t
+PTC
+LLI 32  ; space
+PTC
+LLI 110 ; n
+PTC
+LLI 117 ; u
+PTC
+LLI 109 ; m
+PTC
+LLI 98  ; b
+PTC
+LLI 101 ; e
+PTC
+LLI 114 ; r
+PTC
+LLI 58  ; :
+PTC
+LLI 32  ; space
+PTC
+NOP     ; END PRINT
+NOP     ; Load Input into x
+LAA 0
+INF
+STO
+NOP     ; newEstimate = 1.0;
+LAA 2
+LLF 1.0
+STO
+NOP     ; LOOP START
+NOP     ; estimate = newEstimate
+LAA 1
+LAA 2
+LOD
+STO
+NOP     ; newEstimate = 0.5*(estimate + x/estimate);
+LAA 2
+LAA 0
+LOD
+LAA 1
+LOD
+DVF
+LAA 1 
+LOD
+ADF
+LLF 0.5
+MLF
+STO
+NOP     ; difference = newEstimate - estimate
+LAA 3
+LAA 2
+LOD
+LAA 1
+LOD
+SBF
+STO
+NOP     ; Loop Condition
+NOP     ; difference < -0.005
+LAA 3
+LOD
+LLF -0.005
+LTF
+NOP     ; difference > 0.005
+LAA 3
+LOD
+LLF 0.005
+GTF
+ADI
+JPF 92
+JMP 50  ; jump to start of loop
+NOP     ; LOOP END
+NOP     ; START PRINT
+LLI 65  ; A
+PTC
+LLI 112 ; p
+PTC
+LLI 112 ; p
+PTC
+LLI 114 ; r
+PTC
+LLI 111 ; o
+PTC
+LLI 120 ; x
+PTC
+LLI 105 ; i
+PTC
+LLI 109 ; m
+PTC
+LLI 97  ; a
+PTC
+LLI 116 ; t
+PTC
+LLI 101 ; e
+PTC
+LLI 32  ; space
+PTC
+LLI 115 ; s
+PTC
+LLI 113 ; q
+PTC
+LLI 117 ; u
+PTC
+LLI 97  ; a
+PTC
+LLI 114 ; r
+PTC
+LLI 101 ; e
+PTC
+LLI 32  ; space
+PTC
+LLI 114 ; r
+PTC
+LLI 111 ; o
+PTC
+LLI 111 ; o
+PTC
+LLI 116 ; t
+PTC
+LLI 58  ; :
+PTC
+LLI 32  ; space
+PTC
+NOP     ;Print newEstimate
+LAA 2
+LOD
+PTF
+NOP     ; END PRINT
+PTL     ; print new line
+HLT

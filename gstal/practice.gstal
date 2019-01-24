@@ -1,0 +1,41 @@
+ISP 3 ;variables
+LLI 62
+PTC
+LLI 32
+PTC
+NOP ;scanf("%d", &n)
+LAA 1
+INI
+STO
+NOP ;product = 1
+LAA 0
+LLI 1
+STO
+NOP ;i = 2
+LAA 2
+LLI 2
+STO
+LAA 2 ;fetch i
+NOP ;loop start
+LOD
+LAA 1 ;fetch n
+LOD
+LEI ;i <= n
+JPF 19 ;skip loop
+LAA 0 ;prepare to store to product
+LAA 0 ;get product value
+LOD
+LAA 2 ;get i value
+LOD
+MLI ;product*i
+STO ;product = product*i
+LAA 2 ;prepare to store to i
+LAA 2 ;get i value
+LOD
+LLI 1 ;push 1 to stack
+ADI ;i+1
+STO ;i=i+1
+JMP 18 ;loop
+LAA 0
+LOD
+PTI
